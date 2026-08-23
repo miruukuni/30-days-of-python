@@ -76,17 +76,44 @@ unique_languages = set()
 for i in countries_info:
     unique_languages.update(i['languages'])
 
-print(len(unique_languages))
+print(f"total amount of languages: {len(unique_languages)}")
+
+print('-----------------------------------')        #the worst coding session of my life
 
 all_languages = []
 for i in countries_info:
     all_languages.extend(i['languages'])
 
-for i in all_languages:
+# print(set(all_languages))
+# print(len(set(all_languages)))
+
+
+count_per_language = []
+for i in set(all_languages):
+    count = all_languages.count(i)
+    count_per_language.append((i, count))
+
+# print(count_per_language)
+count_per_language.sort(key=lambda x: x[1], reverse=True)
+# print(count_per_language)
+
+print('top 10 most spoken languages:')
+for i, count in count_per_language[:10]:
+    print(f"{i}: {count}")
+                #took 7 attempts, I WILL DESTROY THIS ENTIRE WORLD
+
+
+    # print(f"{i}: {all_languages.count(i)}")
+    # count = all_languages.count(i)
+    # count_per_language = {i: count}
+    # print(count_per_language)
+    # count_per_language.sort(key=lambda x: x[1], reverse=True)
+
+
     # print(f"{i}: {all_languages.count(i)}")
 
-    top = [all_languages.count(i)]
-    top.sort()
+    # top = [all_languages.count(i)]
+    # top.sort()
 
     # print(all_languages.count(i))
     # if top > 5:
@@ -95,3 +122,31 @@ for i in all_languages:
 
 # all_languages.sort()
 # print(all_languages)
+
+
+#THE CODE DONT CODE
+
+'''
+lesson 1:
+don't put everything inside a loop
+
+lesson 2:
+for (variable) in (variable2):
+variable2 is getting iterated literally, and whatever value it gets to get assigned to variable1
+
+lesson 3:
+coding is hard, lockin leetcode
+
+'''
+
+print('-----------------------------------')
+
+country_population = []
+for i in countries_info:
+    country_population.append((i['name'], i['population']))
+country_population.sort(key=lambda x: x[1], reverse=True)
+
+print('top 10 most populated countries:')
+print(country_population[:10])
+
+#brains are fried but atleast im done
