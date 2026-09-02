@@ -46,7 +46,7 @@
 
 
                         #exericse 3
-import countries
+import infos_to_import.countries as countries
 
 countries = countries.countries
 
@@ -66,7 +66,7 @@ countries = countries.countries
 
 
                 #HUGE
-import info_countries
+import infos_to_import.info_countries as info_countries
 
 countries_info = info_countries.infocountries
 

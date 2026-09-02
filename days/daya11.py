@@ -168,7 +168,7 @@ def is_unique_other(lst):
                 return False
     return True
 
-import info_countries
+import infos_to_import.info_countries as info_countries
 """"Create a function called the most_spoken_languages in the world. It should return 10 or 20 most spoken languages in the world in descending order
 Create a function called the most_populated_countries. It should return 10 or 20 most populated countries in descending order."""
 #day 10 ptsd
