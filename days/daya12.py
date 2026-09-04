@@ -27,3 +27,46 @@ def rgb_color_gen():
 print(rgb_color_gen())
 
 
+#------------------------------------------------------------------------------------------------
+
+def list_of_hexa_color():
+    return '#' + ''.join(random.choices(string.ascii_letters[0:6] + string.digits[0:9], k=6))
+
+print(list_of_hexa_color())
+
+def list_of_rgb_color():
+    first = random.randint(0, 255)
+    second = random.randint(0, 255)
+    third = random.randint(0,255)
+    full = f"rgb({first}, {second}, {third})"
+    return full
+
+def generate_colors(type, amount):
+    if type == "hex":
+        for _ in range(amount):
+            print(list_of_hexa_color())
+    elif type == "rgb":
+        for _ in range(amount):
+            print(list_of_rgb_color())
+
+generate_colors("rgb", 5)
+
+
+#----------------------------------------------------------------
+
+a = ["Math", "English", "Programming", "Physics", "Music"]
+
+def shuffle_list(a):
+    random.shuffle(a)
+    return a
+
+def seven_random_number():
+     a = set()
+     seven_numbers = False
+     while seven_numbers == False:
+         a.add(random.choice(string.digits[0:9]))
+         if len(a) >= 7:
+             seven_numbers = True
+     return list(a)
+
+print(seven_random_number())
